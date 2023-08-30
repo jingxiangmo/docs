@@ -1,4 +1,4 @@
-from flojoy import flojoy, DataContainer, Scalar
+from flojoy import flojoy, DataContainer
 from qcodes.instrument import Instrument
 from typing import Optional
 
@@ -11,8 +11,4 @@ def CLOSE_ALL(
 
     Instrument.close_all()
 
-    match default:
-        case None:
-            return Scalar(c=0.0)
-        case _:
-            return default
+    return default
